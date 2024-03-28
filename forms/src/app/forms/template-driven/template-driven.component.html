@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="col-12">
+        
+        <form #loginForm="ngForm" (ngSubmit)=userlogin(loginForm.value) class="align-center">
+            <h3>Template-driven form!</h3>
+            <div class="form-group">
+
+                <input type="text" class="form-control" placeholder="Enter Name" name="name" ngModel required>
+            </div>
+            <br><br>
+            <div class="form-group">
+
+                <input type="email" class="form-control" placeholder="Enter email" name="email" ngModel required email #email="ngModel">
+                <span class="help-bpx" *ngIf="email.touched && !email.valid">This is Invalid</span>
+            </div>
+            <br><br>
+            <div class="form-group">
+
+                <input type="password" class="form-control" placeholder="Enter password" name="password" ngModel
+                    required>
+            </div>
+            <br><br>
+            <button class="btn btn-warning" (click)=userlogin(loginForm.value)
+                [disabled]="!loginForm.valid">login</button>
+        </form>
+
+    </div>
+</div>

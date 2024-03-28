@@ -1,0 +1,15 @@
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
+input{
+    margin: 15px;
+    font-weight: 700;
+}
+label,select{
+    margin-left: 15px;
+    font-weight: 600;
+}
+.btn{
+    margin: 15px;
+
+}

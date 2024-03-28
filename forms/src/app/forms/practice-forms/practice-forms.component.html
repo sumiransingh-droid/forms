@@ -1,0 +1,43 @@
+<div class="container">
+
+    <form [formGroup]="practiceform" (ngSubmit)="submit()">
+
+        <h3>Practice-forms works!</h3>
+        <br>
+        <div class="formGroup">
+            <input type="text" class="form-control" placeholder="Enter Your Name" formControlName="name" [(ngModel)]="name">
+        </div>
+        <div class="formGroup">
+            <input type="number" class="form-control" placeholder="Enter Your Number" formControlName="phone" [(ngModel)]="phone">
+            <!-- <span *ngIf="phone && phone.touched && phone.invalid">this field is invalid</span> -->
+        </div>
+        <div class="formGroup">
+            <input type="email" class="form-control" placeholder="Enter Your Email" formControlName="email" [(ngModel)]="email">
+        </div>
+        <div class="formGroup">
+            <label for="gender">Gender</label>
+            <div *ngFor="let gender of genders">
+                <label for="">
+                    <input type="radio" formControlName="gender" [value]="gender" name="gender" [(ngModel)]="gender">{{gender}}
+                </label>
+            </div>
+        </div>
+        <div class="formGroup">
+            <label for="course">Course</label>
+            <select class="form-control" id="course" formControlName="course" [(ngModel)]="course">  
+                <option *ngFor="let sub of course">{{sub}}</option>
+            </select>
+        </div>
+            <button class="btn btn-danger btn-lg"  >SUBMIT</button>
+    </form>
+</div>
+
+<div>
+    <p><h4>Name : {{name}}</h4>
+    <p><h4>Phone : {{phone}}</h4>
+    <p><h4>Email : {{email}}</h4>
+    <p><h4>Gender : {{gender}}</h4>
+    <p><h4>Course : {{course}}</h4>
+</div>
+
+

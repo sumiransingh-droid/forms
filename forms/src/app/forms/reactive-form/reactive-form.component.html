@@ -1,0 +1,19 @@
+<h3>reactive-form works!</h3>
+
+<form [formGroup]="loginform" (ngSubmit)="loginUser()">
+    <input  type="text" placeholder="Your Name" name="user" formControlName="user">
+    <br>
+    <span style="color:red;" *ngIf="user && user.invalid && user.touched">This field is not valid</span><br>
+    <br>
+
+
+    <input  type="text" placeholder="Your Email" name="email" formControlName="email">
+    <br>
+    <span style="color:red;" *ngIf="email && email.invalid && email.touched">This field is not valid</span><br>
+
+    
+    <input type="password" placeholder="Your password" name="password" formControlName="password">
+    <br>
+    <span style="color:red;" *ngIf="password && password.invalid && password.touched">field must have 5 character</span><br><br>
+    <button [disabled]="loginform.invalid">Login</button>
+</form>
